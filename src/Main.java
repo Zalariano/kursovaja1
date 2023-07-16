@@ -1,4 +1,7 @@
 public class Main {
+
+    private final static Employee[] employees = new Employee[10];
+
     public static void printAllEmployee(Employee[] employees) {
         for (Employee employee : employees) {
             System.out.println(employee.toString());
@@ -75,14 +78,13 @@ public class Main {
             final String curentSurname = employee.surname;
             final String curentName = employee.name;
             final String curentOtchestvo = employee.otchestvo;
-            System.out.println(" Фамилия : " + curentSurname + " Имя : " + curentName + " Отчество : "+ curentOtchestvo );
+            System.out.println(" Фамилия : " + curentSurname + " Имя : " + curentName + " Отчество : " + curentOtchestvo);
         }
 
     }
 
 
     public static void main(String[] args) {
-        Employee[] employees = new Employee[10];
 
         employees[0] = new Employee("Roman1", "Prakapovich", "Victorovich", 8000, 1);
         employees[1] = new Employee("Roman2", "Prakapovich", "Victorovich", 6000, 2);
@@ -101,7 +103,6 @@ public class Main {
         lookingForMaxSalary(employees);
         countAverageSalary(employees);
         poluchitDannyje(employees);
-        lookingForMaxSalary(employees);
 
     }
 
