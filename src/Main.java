@@ -21,53 +21,28 @@ public class Main {
     }
 
     public static void lookingForMaxSalary(Employee[] employees) {
-        int maxSalary = 0;
-        for (Employee employee : employees) {
-            final int curent1 = maxSalary;
-            if (curent1 < employee.salary) {
-                maxSalary = employee.salary;
-            }
-
-        }
-        for (Employee employee : employees) {
-            if (maxSalary == employee.salary) {
-                System.out.println("Работник с наибольшей заработной платой  " + employee.toString());
-                System.out.println();
+        Employee employeeWithMaxSalary = employees[0];
+        for (Employee j : employees) {
+            if (j.getSalary() > employeeWithMaxSalary.getSalary()) {
+                employeeWithMaxSalary = j;
             }
         }
+        System.out.println("Работник с наибольшей заработной платой  " + employeeWithMaxSalary);
     }
 
     public static void lokingForMinSalary(Employee[] employees) {
-        int maxSalary = 0;
-        for (Employee employee : employees) {
-            final int curent1 = maxSalary;
-            if (curent1 < employee.salary) {
-                maxSalary = employee.salary;
+        Employee employeeWithMinSalary = employees[0];
+        for (Employee e : employees) {
+            if (e.getSalary() < employeeWithMinSalary.getSalary()) {
+                employeeWithMinSalary = e;
             }
         }
-        int minSalary = maxSalary;
-
-        for (Employee employee : employees) {
-            final int curent2 = minSalary;
-            if (curent2 > employee.salary) {
-                minSalary = employee.salary;
-            }
-        }
-        for (Employee employee : employees) {
-            if (minSalary == employee.salary) {
-                System.out.println("Работник с наименьшей заработной платой  " + employee.toString());
-            }
-        }
+        System.out.println("Работник с наименьшей заработной платой  " + employeeWithMinSalary);
     }
 
     public static void countAverageSalary(Employee[] employees) {
         double averageSalary;
-        int summa1 = 0;
-        for (Employee employee : employees) {
-            final int current = employee.salary;
-            summa1 = summa1 + current;
-        }
-        averageSalary = (double) summa1 / employees.length;
+        averageSalary = (double) salaryCount(employees) / employees.length;
         System.out.println("Средние месячные расходы на зарплату составили: " + averageSalary);
         System.out.println();
     }
